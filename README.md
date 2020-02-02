@@ -1,7 +1,7 @@
 # twitter-summarizer-bdjbray
 twitter-summarizer-bdjbray created by GitHub Classroom
 
-Using Weather.gov API.
+Using OpenWeatherMap API.
 A module for users to be able to check the weather of any of the airports in USA.
 
 Userstory:
