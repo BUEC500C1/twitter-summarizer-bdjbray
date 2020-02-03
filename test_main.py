@@ -2,4 +2,4 @@ import pytest
 import main
 
 def testmain():	
-	assert main.test(item)==1
+	assert main.test()==1
