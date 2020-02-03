@@ -1,6 +1,6 @@
 import pyowm
 degree_sign=u'\N{DEGREE SIGN}'
-owm=pyowm.OWM('34646a428c9b333a6b1d2d06ccf9bc41')
+owm=pyowm.OWM('')
 loc=input("please choose a city:")
 observation=owm.weather_at_place(loc)
 weaher=observation.get_weather()
