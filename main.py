@@ -51,10 +51,10 @@ def weather():
 		else:
 			break
 
-def test():
+def test(city):
   first_url = "http://api.openweathermap.org/data/2.5/weather?q="
   second_url = "&APPID=34646a428c9b333a6b1d2d06ccf9bc41&units=imperial"
-  location = "Boston"
+  location = city
   url = first_url + location + second_url
   if urllib.request.urlopen(url):
     return 1
