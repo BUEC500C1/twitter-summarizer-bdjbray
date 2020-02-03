@@ -1,25 +1,61 @@
-import pyowm
-degree_sign=u'\N{DEGREE SIGN}'
-owm=pyowm.OWM('34646a428c9b333a6b1d2d06ccf9bc41')
-loc=input("please choose a city:")
-observation=owm.weather_at_place(loc)
-weaher=observation.get_weather()
-temperature=weaher.get_temperature('fahrenheit')['temp']
-wind=weaher.get_wind('miles_hour')['speed']
-#direction=weaher.get_wind()['deg']
-humidity=weaher.get_humidity()
-status=weaher.get_status()
-print(f'The weather graph of {loc} airport is below!')
-print('---------------------------------------')
-print(f'The local weather status is {status}')
-print(f'The temperature at the location is {temperature}{degree_sign}')
-print(f'The wind speed is {wind} ')
-print(f'The humidity is {humidity}%')
+import json
+import urllib.request
+import os
 
-def available(city):
-  owm=pyowm.OWM('34646a428c9b333a6b1d2d06ccf9bc41')
-  if owm.weather_at_place(city):
-    return 1
-  else:
-    return 0
+#The url without api key and with units set to imperial. Put your APIKEY from openweathermap.org where shown below
+#Using string concatenation to make user input for location possible
+first_url = "http://api.openweathermap.org/data/2.5/weather?q="
+second_url = "&APPID=34646a428c9b333a6b1d2d06ccf9bc41&units=imperial"
+location = ""
+while True:
+	location = input("Enter city name: ")
+	if len(location) < 1:
+		print("\n","==== No Name Entered ====", "\n")
+		continue
+	else:
+		url = first_url + location + second_url
+		os.system("cls")
+		break
 
+while True:
+	#Opening url and getting back byte data.
+	#Use decode(utf-8) to make the bytes usable, str() would not turn the bytes into str
+	try:
+	    print("Retrieving...")
+	    uh = urllib.request.urlopen(url)
+	    data = uh.read()
+	    js = json.loads(data.decode("utf-8"))
+	    print("Retrieval successful")
+	except:
+		print("==== Failure to Retrieve ====")
+		usr=input()
+
+	#Get the desired information into variables.
+	#If JSON has an extra bracket you will need [0] to get to the inner stuff.
+	#print(json.dumps(js, indent = 4))
+	current_temp = js["main"]["temp"]
+	wind_speed = js["wind"]["speed"]
+	humidity = js["main"]["humidity"]
+	description = js["weather"][0]["description"]
+	pressure = js["main"]["pressure"]
+
+	#Round variables. Gets rid of decimals
+	current_temp = round(current_temp)
+	wind_speed = round(wind_speed)
+
+	#print the stuff
+	print("Showing Weather for:", location, "\n")
+	print("Current atmospheric description:", description)
+	print("Current Temperature:", current_temp, "fahrenheit")
+	print("Humidity:", humidity, "%")
+	print("Wind speed:", wind_speed, "mph")
+	print("Atmospheric Pressure:", pressure, "hPa")
+	print("")
+
+	#For refreshing, and cleaning screen
+	refresh = input("To refresh press ENTER\n")
+	if len(refresh) < 1:
+		os.system("cls")
+		continue
+	else:
+		break
