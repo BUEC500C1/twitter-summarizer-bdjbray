@@ -6,9 +6,9 @@ def weather():
 	second_url = "&APPID=34646a428c9b333a6b1d2d06ccf9bc41&units=imperial"
 	location = ""
 	while True:
-		location = input("Enter city name: ")
+		location = input("Please enter city name: ")
 		if len(location) < 1:
-			print("\n","==== No Name Entered ====", "\n")
+			print("\n","---- No Name Entered ----", "\n")
 			continue
 		else:
 			url = first_url + location + second_url
@@ -17,13 +17,13 @@ def weather():
 
 	while True:
 		try:
-		    print("Retrieving...")
+		    print("Collecting Data...")
 		    uh = urllib.request.urlopen(url)
 		    data = uh.read()
 		    js = json.loads(data.decode("utf-8"))
-		    print("Retrieval successful")
+		    print("Successfully Collected")
 		except:
-			print("==== Failure to Retrieve ====")
+			print("---- Failure to Collect ----")
 			usr=input()
 
 		current_temp = js["main"]["temp"]
