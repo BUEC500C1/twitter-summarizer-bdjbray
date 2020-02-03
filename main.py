@@ -16,3 +16,9 @@ print(f'The temperature at the location is {temperature}{degree_sign}')
 print(f'The wind speed is {wind} ')
 print(f'The humidity is {humidity}%')
 
+def available(city):
+  if weather_at_place(city):
+    return 1
+  else:
+    return 0
+

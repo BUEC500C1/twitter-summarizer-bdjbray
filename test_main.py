@@ -4,4 +4,4 @@ import main
 def testmain():
 	namelist=['Bosotn',"Los Angeles","San Francisco"]
 	for item in namelist:
-		main.loc=item
+		assert main.available(item)==1
