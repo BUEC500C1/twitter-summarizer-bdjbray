@@ -1,6 +1,6 @@
 import pyowm
 degree_sign=u'\N{DEGREE SIGN}'
-owm=pyowm.OWM('')
+owm=pyowm.OWM('34646a428c9b333a6b1d2d06ccf9bc41')
 loc=input("please choose a city:")
 observation=owm.weather_at_place(loc)
 weaher=observation.get_weather()
@@ -17,7 +17,8 @@ print(f'The wind speed is {wind} ')
 print(f'The humidity is {humidity}%')
 
 def available(city):
-  if weather_at_place(city):
+  owm=pyowm.OWM('34646a428c9b333a6b1d2d06ccf9bc41')
+  if owm.weather_at_place(city):
     return 1
   else:
     return 0
