@@ -1,3 +1,4 @@
+sudo pip3 install pythonwm 
 import pyowm
 degree_sign=u'\N{DEGREE SIGN}'
 owm=pyowm.OWM('')
