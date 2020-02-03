@@ -2,8 +2,6 @@ import json
 import urllib.request
 import os
 
-#The url without api key and with units set to imperial. Put your APIKEY from openweathermap.org where shown below
-#Using string concatenation to make user input for location possible
 first_url = "http://api.openweathermap.org/data/2.5/weather?q="
 second_url = "&APPID=34646a428c9b333a6b1d2d06ccf9bc41&units=imperial"
 location = ""
@@ -18,8 +16,6 @@ while True:
 		break
 
 while True:
-	#Opening url and getting back byte data.
-	#Use decode(utf-8) to make the bytes usable, str() would not turn the bytes into str
 	try:
 	    print("Retrieving...")
 	    uh = urllib.request.urlopen(url)
@@ -30,21 +26,17 @@ while True:
 		print("==== Failure to Retrieve ====")
 		usr=input()
 
-	#Get the desired information into variables.
-	#If JSON has an extra bracket you will need [0] to get to the inner stuff.
-	#print(json.dumps(js, indent = 4))
 	current_temp = js["main"]["temp"]
 	wind_speed = js["wind"]["speed"]
 	humidity = js["main"]["humidity"]
 	description = js["weather"][0]["description"]
 	pressure = js["main"]["pressure"]
 
-	#Round variables. Gets rid of decimals
 	current_temp = round(current_temp)
 	wind_speed = round(wind_speed)
 
-	#print the stuff
-	print("Showing Weather for:", location, "\n")
+
+	print("The weather of", location, "airport is:\n")
 	print("Current atmospheric description:", description)
 	print("Current Temperature:", current_temp, "fahrenheit")
 	print("Humidity:", humidity, "%")
@@ -52,7 +44,6 @@ while True:
 	print("Atmospheric Pressure:", pressure, "hPa")
 	print("")
 
-	#For refreshing, and cleaning screen
 	refresh = input("To refresh press ENTER\n")
 	if len(refresh) < 1:
 		os.system("cls")
