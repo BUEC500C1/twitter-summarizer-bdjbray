@@ -38,3 +38,11 @@ exmaple:Boston
 Checking the weather of Boston Airport:
 
 ![image](https://github.com/BUEC500C1/twitter-summarizer-bdjbray/blob/master/imgages/Boston.png)
+
+Checking the weather of Washington Airport:
+
+![image](https://github.com/BUEC500C1/twitter-summarizer-bdjbray/blob/master/imgages/Washington.png)
+
+Checking the weather of Miami Airport:
+
+![image](https://github.com/BUEC500C1/twitter-summarizer-bdjbray/blob/master/imgages/Miami.png)
