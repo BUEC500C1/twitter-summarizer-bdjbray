@@ -37,4 +37,4 @@ exmaple:Boston
 # Result 
 Checking the weather of Boston Airport:
 
-![image](https://github.com/bdjbray/twitter-summarizer-bdjbray/blob/master/imgages/Boston.png)
+![image](https://github.com/BUEC500C1/twitter-summarizer-bdjbray/blob/master/imgages/Boston.png)
