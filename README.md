@@ -34,3 +34,8 @@ Type the city of where the Airport is loacted:
 
 exmaple:Boston
 
+# Result 
+Checking the weather of Boston Airport:
+
+![image](http://github.com/bdjbray/images/raw/master/images/Boston.png)
+
