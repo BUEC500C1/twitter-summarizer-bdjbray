@@ -12,7 +12,6 @@ def weather():
 			continue
 		else:
 			url = first_url + location + second_url
-			os.system("cls")
 			break
 
 	while True:
@@ -46,7 +45,6 @@ def weather():
 
 		refresh = input("To refresh press ENTER\n")
 		if len(refresh) < 1:
-			os.system("cls")
 			continue
 		else:
 			break
