@@ -1,13 +1,16 @@
 import main
 
 def testmain():	
-	assert main.weather('Boston')==1
+	assert main.test('Boston')==1
 
 def testmain2():	
-	assert main.weather('LasVegas')==1
+	assert main.test('LasVegas')==1
 
 def testmain3():	
-	assert main.weather('Miami')==1
+	assert main.test('Miami')==1
 
 def testmain4():	
-	assert main.weather('')=="---- No Name Entered ----"
+	assert main.test('')==0
+
+def testmain4():	
+	assert main.test('123')==0
