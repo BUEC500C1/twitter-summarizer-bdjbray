@@ -48,12 +48,5 @@ Checking the weather of Miami Airport:
 ![image](https://github.com/BUEC500C1/twitter-summarizer-bdjbray/blob/master/imgages/Miami.png)
 
 
-# Important Notice 
-
-There should be no space between the words for those cities with two or more words.
-
-Example:LosAngeles 
-
-Example:LasVegas
 
 
