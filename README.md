@@ -46,3 +46,8 @@ Checking the weather of Washington Airport:
 Checking the weather of Miami Airport:
 
 ![image](https://github.com/BUEC500C1/twitter-summarizer-bdjbray/blob/master/imgages/Miami.png)
+
+
+# Important Notice 
+
+
