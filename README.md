@@ -50,4 +50,9 @@ Checking the weather of Miami Airport:
 
 # Important Notice 
 
+There should be no space between the words for those cities with two or more words.
+
+Example:LosAngeles 
+Example:LasVegas
+
 
